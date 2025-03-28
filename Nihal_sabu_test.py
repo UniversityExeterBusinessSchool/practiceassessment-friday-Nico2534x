@@ -56,8 +56,8 @@ keyword_to_count_2 = keywords[last_digit]
 #set a keyword dictionary to store values 
 
 keywords_count = {
-    keyword_to_count_1 = 0
-    keyword_to_count_2 = 0
+    keyword_to_count_1 : 0,
+    keyword_to_count_2 : 0
 }
 
 # convert reviews to a lowercase to reduce case sensitivity 
@@ -66,9 +66,18 @@ reviews_lower = customer_reviews.lower()
 #split the customer reviews 
 words = reviews_lower.split()
 
-#count word occurences in 
+#count word occurences of each keyword
+for word in words :
+    #remove punctuations 
+    clean_word = word.strip(".,!?")
+    if clean_word == keyword_to_count_1:
+        keywords_count[keyword_to_count_1]
+    if keyword_to_count_2 == keyword_to_count_2:
+        keywords_count[keyword_to_count_2]
 
+print(keywords_count)
 
+##{'issues': 0, 'materials': 0}
 
 
 
@@ -79,28 +88,60 @@ words = reviews_lower.split()
 # Gross Profit Margin, Inventory Turnover, Customer Retention Rate (CRR), and Break-even Analysis. Implement Python functions 
 # that take relevant values as inputs and return the computed metric. Use the first two and last two digits of your ID number as input values.
 
-# Insert first two digits of ID number here:
-# Insert last two digits of ID number here:
+# Insert first two digits of ID number here:75
+# Insert last two digits of ID number here:79
 
 # Write your function for Gross Profit Margin
-
+def gross_profit_margin(revenue, cogs):
+    return ((revenue - cogs) / revenue) * 100
 # Write your function for Inventory Turnover
+def inventory_turnover(cogs, avg_inventory):
+    return cogs / avg_inventory
 
 # Write your function for Customer Retention Rate (CRR)
-
+def customer_retention_rate(customers_start, customers_end, new_customers):
+    return ((customers_end - new_customers) / customers_start) * 100
 # Write your function for Break-even Analysis
-
+def break_even_analysis(fixed_costs, selling_price, variable_cost):
+    return fixed_costs / (selling_price - variable_cost)
 # Call your functions here
 
+# Inputs (using SID digits)
+revenue = 75_000    # First two digits (75) scaled for realism
+cogs = 79_000       # Last two digits (79) scaled (hypothetical, since COGS > Revenue is unusual)
+avg_inventory = 15_000
+customers_start = 75
+customers_end = 100
+new_customers = 25
+fixed_costs = 75_000
+selling_price = 79
+variable_cost = 30
+
+# Compute metrics
+gpm = gross_profit_margin(revenue, cogs)
+inv_turnover = inventory_turnover(cogs, avg_inventory)
+crr = customer_retention_rate(customers_start, customers_end, new_customers)
+break_even = break_even_analysis(fixed_costs, selling_price, variable_cost)
+
+# Print results
+print(f"Gross Profit Margin: {gpm:.2f}%")
+print(f"Inventory Turnover: {inv_turnover:.2f}")
+print(f"Customer Retention Rate: {crr:.2f}%")
+print(f"Break-even Units: {break_even:.2f}")
 ##########################################################################################################################################################
 
+
+
+
+
+"""
 # Question 3 - Forecasting and Regression
 # A logistics company has gathered data on delivery costs and shipment volumes. The table below provides different costs and their corresponding shipment volumes.
 # Develop a linear regression model and determine:
 # 1. The optimal delivery cost that maximizes profit
 # 2. The expected shipment volume when the cost is set at £68
 
-"""
+
 Delivery Cost (£)    Shipment Volume (Units)
 -------------------------------------------
 25                  500
@@ -118,7 +159,7 @@ Delivery Cost (£)    Shipment Volume (Units)
 # Write your regression model code here
 
 ##########################################################################################################################################################
-
+"""
 # Question 4 - Debugging and Data Visualization
 
 import rand as random
@@ -137,3 +178,4 @@ plt.ylabel="Frequency"
 plt.grid("True")
 plt.show("plot")
 
+"""
