@@ -53,13 +53,20 @@ last_digit = 9
 keyword_to_count_1 = keywords[first_digit]
 keyword_to_count_2 = keywords[last_digit]
 
-#initialise keyword dictionary
+#set a keyword dictionary to store values 
 
 keywords_count = {
     keyword_to_count_1 = 0
     keyword_to_count_2 = 0
 }
 
+# convert reviews to a lowercase to reduce case sensitivity 
+reviews_lower = customer_reviews.lower()
+
+#split the customer reviews 
+words = reviews_lower.split()
+
+#count word occurences in 
 
 
 
