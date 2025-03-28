@@ -50,7 +50,16 @@ keywords = {
 first_digit = 7
 last_digit = 9
 
-keyword_to_count_1 = 
+keyword_to_count_1 = keywords[first_digit]
+keyword_to_count_2 = keywords[last_digit]
+
+#initialise keyword dictionary
+
+keywords_count = {
+    keyword_to_count_1 = 0
+    keyword_to_count_2 = 0
+}
+
 
 
 
